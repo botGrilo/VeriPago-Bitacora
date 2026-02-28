@@ -3,33 +3,28 @@
 
 ---
 
-## 📊 Matriz de Estado de la Sociedad (Cierre de Fase)
+## 📋 Pendientes Próxima Sesión
+
 | Ítem | Responsable | Estado | Observaciones |
 | :--- | :--- | :--- | :--- |
-| **Frontend Blindado** | Antigravity | ✅ CERRADO | isVerified, handlePlanChange, handleResetToStep1 operativos. |
-| **VALIDAR_ADMIN (n8n)** | Goyo | ✅ CERRADO | Versión blindada: Header + $env configurada. |
-| **Infraestructura GitHub** | Goyo | ✅ CERRADO | Repo Privado (Sistema) + Repo Público (Memoria). |
-| **Notificar Admin** | Antigravity | 🔴 PENDIENTE | Habilitar + agregar monto_esperado al mensaje. |
-| **RESP_IR_A_PAGO** | Goyo | 🔴 PENDIENTE | Verificar modo Expression en sesion_id de n8n. |
-| **Bug OTP (Activación)** | Goyo | ⏸️ STANDBY | Lógica de Instagram pendiente (No romper flujo). |
-| **Sincronización Precios** | Goyo | 🟡 PENDIENTE | Mostrar $5 o $29 según plan en correo OTP. |
-| **Job Limpieza DB** | Goyo | 🟡 PENDIENTE | Borrar registros pendiente_verificacion > 24h. |
+| **Notificar Admin** | Antigravity | 🔴 Pendiente | Habilitar + monto_esperado. |
+| **RESP_IR_A_PAGO** | Goyo | 🔴 Pendiente | Verificar Expression en sesion_id. |
+| **Sincronización Precios** | Goyo | 🟡 Pendiente | $5 o $29 en correo OTP. |
+| **Job Limpieza DB** | Goyo | 🟡 Pendiente | Borrar registros antiguos (>24h). |
+| **Bug OTP (Activación)** | Goyo | ⏸️ Standby | En pausa por lógica de Instagram. |
 
 ---
 
-## 🤖 Bitácora de Operaciones
-**Estado Actual:** Blindaje de Activación y Sincronización de Memoria completados.
-
-### ✅ Hito de hoy (27 Feb 2026):
-1. **Seguridad n8n:** Implementado el portero `VALIDAR_ADMIN` en la salida de activación. No se aceptan llaves en el body ni hardcodeadas.
-2. **Endurecimiento UI:** El frontend ahora congela los planes tras la verificación, evitando ataques de inyección de planes.
-3. **Memoria Colectiva:** Sincronización de la bitácora en GitHub botGrilo/VeriPago-Bitacora.
+## ✅ Cerrado (27 Feb 2026)
+- **Frontend blindado:** `isVerified`, [handlePlanChange](cci:1://file:///d:/z-DOCKER/UnificarProyectos/frontendBotGrilo/web-botgrilo/src/app/veripago/registro/_hooks/useRegistration.ts:125:4-128:6), [handleResetToStep1](cci:1://file:///d:/z-DOCKER/UnificarProyectos/frontendBotGrilo/web-botgrilo/src/app/veripago/registro/_hooks/useRegistration.ts:130:4-134:6) operativos.
+- **VALIDAR_ADMIN (n8n):** Versión blindada activa (Header + $env).
+- **Infraestructura GitHub:** Repositorio público bitácora + repo privado sistema configurados.
 
 ---
 
-## 🚫 Registro de Decisiones Rechazadas (Memoria Institucional)
-1. **Validación por Body en `activar`:** RECHAZADA. Insegura (controlada por cliente). Cambiada a **HTTP Header**.
-2. **Llaves Hardcodeadas en n8n:** RECHAZADAS. Insegura (expuesta en export). Cambiada a **Variables de Entorno ($env)**.
+## 🚫 Registro de Decisiones Rechazadas
+1. **Validación por Body en `activar`:** RECHAZADA por insegura.
+2. **Llaves Hardcodeadas en n8n:** RECHAZADAS por insegura.
 
 ---
-*Cierre de sesión: Todo el proyecto sincronizado en GitHub.*
+*Bitácora oficial sincronizada para auditoría.*
